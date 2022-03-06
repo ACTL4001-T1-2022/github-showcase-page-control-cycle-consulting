@@ -2,14 +2,9 @@
 <div align="center">
   <img src="images/cycle.png" alt="Logo" width="80" height="80">
 
-  <h1 align="center", 
-    style="border-bottom: none; margin-bottom: 0">
-      ACTL4001 Case Report
-  </h1>
+  <h2 align="center">ACTL4001 Case Report</h2>
 
-  <h2 align="center", 
-    style="border-bottom: none; margin: 0">
-    Control-Cycle</h2>
+  <h3 align="center">Control-Cycle</h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -39,7 +34,7 @@
 </details>
 
 <div>
-  <strong>Members:</strong>
+  <strong>Team Members:</strong>
 
   <ul style = "font-size:11pt">
   <li>Andrew Uen</li>
