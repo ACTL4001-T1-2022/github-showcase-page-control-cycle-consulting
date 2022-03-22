@@ -8,27 +8,6 @@ rm(list.of.packages, new.packages)
 ## Loading Required Packages ####
 pacman::p_load(
   tidyverse,
-  readxl
+  lubridate
 )
 
-## Loading datasets ####
-csv.dir<-list.files(path = "csv data", recursive = T,
-                    full.names = T)
-csv.names<-basename(csv.dir)%>%
-  str_remove(".csv")
-
-csv.names<-if_else(str_detect(csv.names, "\\s"),
-                   str_to_lower(
-                     str_replace(csv.names, "\\s","_")),
-                   csv.names)
-
-walk2(csv.dir, csv.names,
-      function(dir,name) 
-        assign(name,  read_csv(dir, show_col_types = F),
-               envir = .GlobalEnv))
-
-rf_yield<-rf_yield%>%
-  pivot_longer(cols = -Maturity,
-               names_to = "Year", 
-               values_to = "yield")%>%
-  mutate(Year = lubridate::dmy(Year))
