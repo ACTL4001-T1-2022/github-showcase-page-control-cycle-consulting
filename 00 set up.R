@@ -8,6 +8,8 @@ rm(list.of.packages, new.packages)
 ## Loading Required Packages ####
 pacman::p_load(
   tidyverse,
-  lubridate
+  lubridate,
+  tidymodels
 )
+pacman::p_install(readxl)
 
