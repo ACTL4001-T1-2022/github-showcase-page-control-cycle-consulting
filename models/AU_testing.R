@@ -5,9 +5,9 @@ source("01 cleanup.R")
 head(league_defense)
 View(league_shooting)
 
-table1 = tournament_shooting %>%
-  filter(Nation=="Dosqaly", Year=="2020", Pos!="DF", Pos!="GK") 
-View(table1)
+table11 = tournament_shooting %>%
+  filter(Nation==tournament_results$country[tournament_results$tournament_rank==1 & tournament_results$year=="2020"], Year=="2020", Pos any("DF","GK")) 
+View(table11)
 table1a = league_shooting %>%
   filter(Nation=="Dosqaly", Year=="2020", Pos!="DF", Pos!="GK") 
 View(table1a)
@@ -22,3 +22,6 @@ View(table2)
 
 
 #!str_detect(Pos, "DF")
+
+table3 = league_shooting %>%
+  count(League)
