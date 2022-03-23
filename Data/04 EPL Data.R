@@ -25,8 +25,6 @@ epl_passing<-read_csv("Data/EPL data/EPL Passing.csv")%>%
 epl_shooting<-read_csv("Data/EPL data/EPL Shooting.csv")%>%
   extract_positions()
 
-column_selection<-readxl::read_excel("Data/Column Selection.xlsx")
-
 save(list = c("epl_shooting", "epl_passing", 
               "epl_defense","epl_goalkeeping"), 
      file = "Data/Complete RData/EPL Data.RData")

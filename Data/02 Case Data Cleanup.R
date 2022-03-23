@@ -1,20 +1,22 @@
 source("Data/01 Case Data.R")
 
 ## Standardising age columns ####
-age_calc<-function(df){
-    df%>%
-        mutate(Age = Year - Born)
+calc_n_clean<-function(df){
+  df%>%
+    mutate(Age = Year - Born)%>%
+    mutate(across(where(is.double),
+                  ~if_else(.<0,0,.)))
 }
 
-league_shooting<-age_calc(league_shooting)
-league_passing<-age_calc(league_passing)
-league_defense <-age_calc(league_defense)
-league_goalkeeping<-age_calc(league_goalkeeping)
+league_shooting<-calc_n_clean(league_shooting)
+league_passing<-calc_n_clean(league_passing)
+league_defense <-calc_n_clean(league_defense)
+league_goalkeeping<-calc_n_clean(league_goalkeeping)
 
-tournament_shooting<-age_calc(tournament_shooting)
-tournament_passing<-age_calc(tournament_passing)
-tournament_defense <-age_calc(tournament_defense)
-tournament_goalkeeping<-age_calc(tournament_goalkeeping)
+tournament_shooting<-calc_n_clean(tournament_shooting)
+tournament_passing<-calc_n_clean(tournament_passing)
+tournament_defense <-calc_n_clean(tournament_defense)
+tournament_goalkeeping<-calc_n_clean(tournament_goalkeeping)
 
-rm(age_calc)
+rm(calc_n_clean)
 save(list = ls(), file = "Data/Complete RData/SOA Data.RData")

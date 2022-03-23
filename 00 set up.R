@@ -9,7 +9,7 @@ rm(list.of.packages, new.packages)
 pacman::p_load(
   tidyverse,
   lubridate,
-  tidymodels
+  tidymodels,
+  readxl
 )
-pacman::p_install(readxl)
 
