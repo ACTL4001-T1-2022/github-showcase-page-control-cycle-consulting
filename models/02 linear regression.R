@@ -17,7 +17,8 @@ epl_model_cv<-epl_data_cleaned%>%
   mutate(recipe = map(data, 
                       function(data){
                         recipe(spi ~., data = data)%>%
-                          update_role(Player, Year, Squad, new_role = "ID")
+                          update_role(Player, Year, Squad, 
+                                      new_role = "ID")
                       }))%>%
   mutate(cvfold = map(data,
                       vfold_cv, v=4, repeats =2))
