@@ -33,5 +33,31 @@ tournament_passing<-calc_n_clean(tournament_passing)
 tournament_defense <-calc_n_clean(tournament_defense)
 tournament_goalkeeping<-calc_n_clean(tournament_goalkeeping)
 
-rm(calc_n_clean)
+player_2020_salary<-`player_2020 salary`%>%
+  mutate(Pos1 = str_sub(Position,1,2),
+         Pos2 = str_sub(Position,3,4),
+         Year = 2020)%>%
+  pivot_longer(c(Pos1, Pos2), 
+               names_to = "Pos_num", 
+               values_to = "Pos_name")%>%
+  filter(Pos_name != "")%>%
+  mutate(Pos = Pos_name)%>%
+  select(-c("Position","Pos_num", "Pos_name"))%>%
+  rename(Nation = Country,
+         salary = `Annualized Salary`)
+
+player_2021_salary<-`player_2021 salary`%>%
+  mutate(Pos1 = str_sub(Position,1,2),
+         Pos2 = str_sub(Position,3,4),
+         Year = 2021)%>%
+  pivot_longer(c(Pos1, Pos2), 
+               names_to = "Pos_num", 
+               values_to = "Pos_name")%>%
+  filter(Pos_name != "")%>%
+  mutate(Pos = Pos_name)%>%
+  select(-c("Position","Pos_num", "Pos_name"))%>%
+  rename(Nation = Country,
+         salary = `Annualized Salary`)
+
+rm(calc_n_clean, `player_2020 salary`, `player_2021 salary`)
 save(list = ls(), file = "Data/Complete RData/SOA Data.RData")

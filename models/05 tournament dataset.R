@@ -1,7 +1,6 @@
 ## Tournament Data Cleaning ####
-
 source("00 set up.R")
-source("01 Data Load In.R")
+load("Data/Complete RData/SOA Data.RData")
 
 ## 01 Splitting Data based on Position ####
 column_selection<-readxl::read_excel("Data/Column Selection.xlsx")

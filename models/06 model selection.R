@@ -47,12 +47,6 @@ engine_generator<-function(model,pos){
 
 model_training<-epl_data_cleaned%>%
   rename(epl_data = data)%>%
-  left_join(tournament_data_cleaned,
-            by = "pos")%>%
-  mutate(data= map(data, 
-                   ~.x%>%
-                     mutate(across(contains("90s"),~.*38/8))%>%
-                     rename(Squad = Nation)))%>%
   slice(rep(row_number(), each= 3))%>%
   mutate(model = rep(c("linear","el_net","xgboost"),4))%>%
   mutate(
@@ -83,6 +77,12 @@ model_fit<-
 
 model_test<-
   model_training%>%
+  left_join(tournament_data_cleaned,
+            by = "pos")%>%
+  mutate(data= map(data, 
+                   ~.x%>%
+                     mutate(across(contains("90s"),~.*38/8))%>%
+                     rename(Squad = Nation)))%>%
   mutate(pred = map2(fit, data,
                      function(fit, data) 
                        predict(fit, new_data = data)))%>%
@@ -113,7 +113,7 @@ ggplot(tibble(x= 1:24, y = inverse_sigmoid(1:24)),
        aes(x,y))+
   geom_line()
 
-tournament_prediction<-
+tournament_overall_prediction<-
   model_test%>%
   select(pos, model, prediction)%>%
   unnest(cols = prediction)%>%
@@ -127,9 +127,10 @@ tournament_prediction<-
               rename(actual_rank = tournament_rank),
             by = c("Squad" = "country"))
 
-anyNA(tournament_prediction$rank)
+anyNA(tournament_overall_prediction%>%
+        select(contains("rank")))
 
-tournament_scoring<-tournament_prediction%>%
+tournament_overall_scoring<-tournament_overall_prediction%>%
   mutate(diff = actual_rank - pred_rank)%>%
   mutate(penalized_diff =if_else(actual_rank<pred_rank,
                        as.integer(diff*2),diff))%>%
@@ -141,11 +142,11 @@ tournament_scoring<-tournament_prediction%>%
             mse_penalized = mean(penalized_diff^2),
             mse_score = mean(score_diff^2))
 
-save(inverse_sigmoid, tournament_prediction,
-     tournament_scoring, 
+save(inverse_sigmoid, tournament_overall_prediction,
+     tournament_overall_scoring, 
      file = "models/02 Model Selection/tournament_result_pred.RData")
-rm(tournament_prediction,
-   tournament_scoring)
+rm(tournament_overall_prediction,
+   tournament_overall_scoring)
 
 ## 03 Predict Position Results ####
 tournament_player_prediction<-
@@ -187,7 +188,7 @@ tournament_player_scoring<-tournament_player_prediction%>%
 
 # Analyse by position
 tournament_player_scoring%>%
-  filter(pos == "DF")%>%
+  filter(pos == "GK")%>%
   pull(scoring)
 
 save(tournament_player_prediction, tournament_player_scoring,
