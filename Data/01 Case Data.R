@@ -14,7 +14,6 @@ pacman::p_load(
 )
 
 ## 01 Cleaning the environment and loading in data ####
-rm(list = ls())
 csv.dir<-list.files(path = "Data/case data/", recursive = T,
                     full.names = T)
 csv.names<-basename(csv.dir)%>%
