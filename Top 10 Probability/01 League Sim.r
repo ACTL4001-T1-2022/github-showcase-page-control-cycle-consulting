@@ -53,8 +53,10 @@ SimResults<-
   group_by(SimNum)%>%
   mutate(Rank = min_rank(desc(Points)))
 
-rm(SimTable)
+# Remove detailed simulation restuls to save memory
+rm(SimTable) 
 
+## SimResults Analysis ####
 SimResults %>%
   group_by(Team)%>%
   summarise(Top10 =sum(Rank<=10)/n(),
