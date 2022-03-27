@@ -1,18 +1,31 @@
 source("00 set up.R")
 source("01 Data Load In.R")
 
-test_set <- tournament_shooting %>%
+Selected_Players<-readxl::read_excel("Top 10 Probability/Selected Players.xlsx")
+
+Rarita_xG <- league_shooting %>%
+  inner_join(Selected_Players,
+             by=c("Player","Pos")) %>%
+  arrange(desc(Year)) %>%
+  filter(!duplicated(Player)) %>%
+  transmute(Nation="Rarita",
+            xG_team=sum(`Expected xG`)/n()*11) %>%
+  group_by(Nation) %>%
+  summarise(xG_team=mean(xG_team))
+
+xG_tournament <- tournament_shooting %>%
   filter(Year==2021) %>%
   group_by(Nation) %>%
-  summarise(xG_team = sum(`Expected xG`)/n()*11)
+  summarise(xG_team = sum(`Expected xG`)/n()*11) %>%
+  bind_rows(Rarita_xG)
 
-xG_tournament <- bind_cols(
-  test_set %>%
-    slice(rep(1:n(),each=nrow(test_set))) %>%
+tournament_matches <- bind_cols(
+  xG_tournament %>%
+    slice(rep(1:n(),each=nrow(xG_tournament))) %>%
     rename(Home=Nation,
            xG_Home=xG_team),
-  test_set %>%
-    slice(rep(1:n(),times=nrow(test_set))) %>%
+  xG_tournament %>%
+    slice(rep(1:n(),times=nrow(xG_tournament))) %>%
     rename(Away=Nation,
            xG_Away=xG_team)) %>%
   filter(Home!=Away)
@@ -20,7 +33,7 @@ xG_tournament <- bind_cols(
 ## Simulation ##
 nSim <- 10000
 set.seed(555)
-SimTable <- xG_tournament %>% 
+SimTable <- tournament_matches %>% 
   slice(rep(row_number(), each = nSim))%>%
   mutate(
     Home_G=rpois(n(),xG_Home),
@@ -29,7 +42,7 @@ SimTable <- xG_tournament %>%
                   ifelse(Home_G == Away_G, 1, 0)), 
     Away_P=ifelse(Home_G > Away_G, 0,
                   ifelse(Home_G == Away_G, 1, 3)),
-    SimNum=rep(1:nSim,times=nrow(xG_tournament))
+    SimNum=rep(1:nSim,times=nrow(tournament_matches))
   )%>%
   select(c(Home:xG_Away, Home_P, Away_P, SimNum))%>%
   pivot_longer(ends_with("P"),
