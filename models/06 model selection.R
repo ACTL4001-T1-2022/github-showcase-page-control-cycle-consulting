@@ -106,12 +106,17 @@ inverse_sigmoid<-function(x){
   range = log(input/(1-input))
   uniform_seq = seq(range[1], range[2], length.out = 24)
   set_names(uniform_seq,1:24)
-  output<-1/(1+exp(-uniform_seq[x]))-0.5
+  output<-1/(1+exp(-uniform_seq[x]))
   return(output)
 }
 ggplot(tibble(x= 1:24, y = inverse_sigmoid(1:24)), 
        aes(x,y))+
-  geom_line()
+  geom_line()+
+  theme_classic()+
+  labs(x="rank", y ="score", title = "Inverse Sigmoid Scoring")+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_x_continuous(limits = c(1,24),
+                     breaks = c(1,seq(4, 24, 4)))
 
 tournament_overall_prediction<-
   model_test%>%

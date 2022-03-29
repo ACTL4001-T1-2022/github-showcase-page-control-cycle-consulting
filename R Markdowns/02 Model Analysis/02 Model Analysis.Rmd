@@ -131,4 +131,3 @@ league_spi_pred%>%
     tidy()%>%
     rename(lambda=penalty) 
 ```
-
