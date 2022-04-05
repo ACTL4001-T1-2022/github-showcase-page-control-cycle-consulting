@@ -49,6 +49,27 @@ This GitHub repository documents the code and methodology use in completing the 
 
 The aim of the challenge is to construct a national footbal team for the fictional country of Rarita, with the goal of achieving a positive economic impact for the country.
 
+PROJECT SUMMARY 
+Football is a sport loved and played by billions worldwide. Beyond this, football can provide countries with opportunities for economic gain, global visibility and improved social outcomes. 
+
+In recognizing this, the country of Rarita has engaged our team to develop a strategy for entering the international Football and Sporting Association (“FSA”) League and develop a Rarita Football brand. 
+
+This GitHub repository documents the code and methodology use in completing the Society of Actuaries Research Institute 2022 Case Challenge. For an in-depth exploration of our methodology, assumptions and strategy, please refer to our project report. [insert link to the report]
+
+The project began with the process of team selection which involves identifying key selection criteria and then applying it through a predictive model to select the most competitive team. Through the selection of a high performing team, Rarita has strong chances of placing within the top 10 and achieving the FSA championship within 10 years. 
+[insert Figure 2: Projected Team Ranking – 95% Confidence Interval]
+
+With such achievements, the resulting commercial success creates a cycle of strategic growth by generating sufficient resources to allow implementation of key strategies which support the development of players to their maximum potential whilst engaging the broader community. 
+[insert Figure 5: Cycle of Strategic Growth]
+
+Through our two expenditure programs, investments are aimed at the grassroots level, allowing an equitable re-distribution of profits to improve the general quality of life and wellbeing. Ultimately, our strategies will guarantee sustainable and profitable growth, creating on average over ∂11,640 mil worth of annual socio-economic benefits. 
+[insert Figure 8: Average Annual Socio-Economic Impact]
+
+Ultimately, through our team selection and implementation strategies, we expect Rarita to achieve the below three objectives and successfully develop a Rarita Football brand over the next ten years.
+[insert Figure 1: Key Objectives for the Rarita Football Team]
+
+Below is our project report:
+[embed of PDF if possible]
 ---
 
 
