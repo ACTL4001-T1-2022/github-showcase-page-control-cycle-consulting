@@ -15,8 +15,11 @@
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <header class="page-header" role="banner">
-      <img src = "/github-showcase-page-control-cycle-consulting/image/banner.gif"></img>
+    <header class="page-header" role="banner" style = "padding: 0">
+      <video autoplay muted loop class="video_banner">
+          <source src = "https://actl4001-t1-2022.github.io/github-showcase-page-control-cycle-consulting/images/banner.mp4" 
+          type = "video/mp4">
+      </video>
       {% if site.github.is_project_page %}
         <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
       {% endif %}
