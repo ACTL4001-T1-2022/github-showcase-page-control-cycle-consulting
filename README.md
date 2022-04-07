@@ -26,7 +26,7 @@
       <ol>
         <li><a href="#soccer-power-index">Soccer Power Index</a></li>
         <li><a href="#position-specific-variables">Variables</a></li>
-        <li><a href="#markdwon-reports">Model Analysis</a></li>
+        <li><a href="#markdown-reports">Model Analysis</a></li>
       </ol>
     </li>
     <li>
@@ -64,6 +64,7 @@ The project began with the process of team selection which involves identifying 
 <!-- PROJECT LOGO -->
 <figure align="center">
   <img src="images/fig_2.png" alt="Logo" width="100%">
+
   <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 2: Projected Team Ranking – 95% Confidence Interval]</b></figcaption>
 </figure>
 
@@ -73,6 +74,7 @@ With such achievements, the resulting commercial success creates a cycle of stra
 <!-- Fig 5: Cycle of Strategic Growth -->
 <figure align="center">
   <img src="images/fig_5.png" alt="Growth-Cycle" width="100%">
+  
   <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 5: Cycle of Strategic Growth]</b></figcaption>
 </figure>
 
@@ -81,6 +83,7 @@ Through our two expenditure programs, investments are aimed at the grassroots le
 <!-- Average Annual Socio-Economic Impact -->
 <figure align="center">
   <img src="images/fig_8.png" alt="Impact" width="100%">
+
   <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 8: Average Annual Socio-Economic Impact]</b></figcaption>
 </figure>
 
@@ -88,7 +91,7 @@ Through our two expenditure programs, investments are aimed at the grassroots le
 
 To create a robust model to select the players of the Rarita Football Team, data from the [English Premier League (EPL)](https://projects.fivethirtyeight.com/soccer-predictions/premier-league/) was used as the training data. The EPL data was split according to the player's roles, namely the Forwards, Midfielders, Defenders and Goalkeepers. A series of models, including [XGBoost](https://xgboost.readthedocs.io/en/stable/) and Regularised Linear Regression were trained on the EPL dataset.
 
-The [tournament dataset](Data\case%20data\Tournament) was then used as the testing data, and the model with the lowest prediction error was selected as the ideal model for each player position.
+The [tournament dataset](Data/case%20data/Tournament) was then used as the testing data, and the model with the lowest prediction error was selected as the ideal model for each player position.
 ### Soccer Power Index
 
 ESPN's Soccer Power Index (SPI) is an international and club rating system and is designed to provide the best possible objective rating of a team's current overall skill level. The use of a team's SPI aims to predict which teams will have the most success going forward (Silver, 2009). Though it may not accurately predict goal scorings and results on a match-level, it accounts for a series of different factors that can affect the outcome of the team's performance in the league as a whole, including:
@@ -102,15 +105,15 @@ To evaluate which variables had the largest impact on the SPI of each position, 
 
 #### Forward
 
-![](report\01%20Images\FW%20VIP.jpeg) 
+![](report/01%20Images/FW%20VIP.jpeg) 
 
 #### Midfielders
 
-![](report\01%20Images\MF%20VIP.jpeg) 
+![](report/01%20Images/MF%20VIP.jpeg) 
 
 #### Defenders
 
-![](report\01%20Images\DF%20VIP.jpeg) 
+![](report/01%20Images/DF%20VIP.jpeg) 
 
 In general, the largest indicator of SPI were the player passing rates. For Midfielders and Defenders, short and medium passes completed respectively were key indicators of SPI. Looking at the non-passing completed variables, Midfielders prioritized passes completed to the 18-yard box while Defenders prioritized total distance passed and blocked passes. ​
 
@@ -120,8 +123,8 @@ However, for Fowards no one clear variable stood out. The variable importance de
 
 To further understand the methodology used, explore the R Markdown documents below:
 
-* [Data Cleaning](R%20Markdowns\01%20Data%20Cleaning\Data%20Cleaning%20Analysis.nb.html)
-* [Model Analysis](R%20Markdowns\02%20Model%20Analysis\02%20Model%20Analysis.nb.html)
+* [Data Cleaning](R%20Markdowns/01%20Data%20Cleaning/Data%20Cleaning%20Analysis.nb.html)
+* [Model Analysis](R%20Markdowns/02%20Model%20Analysis/02%20Model%20Analysis.nb.html)
 
 ## Conclusion
 

@@ -26,7 +26,7 @@
       <ol>
         <li><a href="#soccer-power-index">Soccer Power Index</a></li>
         <li><a href="#position-specific-variables">Variables</a></li>
-        <li><a href="#markdwon-reports">Model Analysis</a></li>
+        <li><a href="#markdown-reports">Model Analysis</a></li>
       </ol>
     </li>
     <li>
