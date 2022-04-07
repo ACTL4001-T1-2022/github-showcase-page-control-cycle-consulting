@@ -1,3 +1,5 @@
+![](images/banner.mp4)
+
 <!-- PROJECT LOGO -->
 <div align="center">
   <img src="images/cycle.png" alt="Logo">

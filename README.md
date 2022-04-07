@@ -1,3 +1,5 @@
+![](images/banner.mp4)
+
 <!-- PROJECT LOGO -->
 <div align="center">
   <img src="images/cycle.png" alt="Logo">
@@ -26,7 +28,7 @@
       <ol>
         <li><a href="#soccer-power-index">Soccer Power Index</a></li>
         <li><a href="#position-specific-variables">Variables</a></li>
-        <li><a href="#markdown-reports">Model Analysis</a></li>
+        <li><a href="#model-analysis">Model Analysis</a></li>
       </ol>
     </li>
     <li>
@@ -80,9 +82,7 @@ Through our two expenditure programs, investments are aimed at the grassroots le
 
 <!-- Average Annual Socio-Economic Impact -->
 <figure align="center">
-  <img src="images/fig_8.png" alt="Impact" width="100%">
-
-  <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 8: Average Annual Socio-Economic Impact]</b></figcaption>
+  <img src="images/fig_8_md.png" alt="Impact" width="100%">
 </figure>
 
 ## Project Methodology
