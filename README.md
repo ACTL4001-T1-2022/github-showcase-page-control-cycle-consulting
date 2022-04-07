@@ -1,4 +1,8 @@
-![](images/banner.gif)
+<div>
+  <video autoplay muted loop style ="width:100%">
+    <source src = "images/banner.mp4">
+  </video>
+</div>
 
 <!-- PROJECT LOGO -->
 <div align="center">
