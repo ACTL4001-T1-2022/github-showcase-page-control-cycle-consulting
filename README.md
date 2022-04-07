@@ -1,4 +1,4 @@
-![](images/banner.mp4)
+![](images/banner.gif)
 
 <!-- PROJECT LOGO -->
 <div align="center">
