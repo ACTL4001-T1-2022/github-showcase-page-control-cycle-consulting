@@ -1,9 +1,5 @@
-![](images/banner.gif)
-
 <!-- PROJECT LOGO -->
 <div align="center">
-  <img src="images/cycle.png" alt="Logo">
-
   <h1 align="center">ACTL4001 Case Report</h1>
 
   <h3 align="center">Control-Cycle</h3>

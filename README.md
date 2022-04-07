@@ -1,13 +1,9 @@
-<div>
-  <video autoplay muted loop style ="width:100%">
-    <source src = "images/banner.mp4">
-  </video>
-</div>
+<video autoplay muted loop style ="width:100%">
+  <source src = "images/banner.mp4">
+</video>
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <img src="images/cycle.png" alt="Logo">
-
   <h1 align="center">ACTL4001 Case Report</h1>
 
   <h3 align="center">Control-Cycle</h3>
