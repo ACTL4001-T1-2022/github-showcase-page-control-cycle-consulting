@@ -88,6 +88,8 @@ Through our two expenditure programs, investments are aimed at the grassroots le
   <img src="images/fig_8_md.png" alt="Impact" width="100%">
 </figure>
 
+For exploration of financial modelling and underlying assumptions, please refer to the [Excel Model](financial%20projections.xlsx).
+
 ## Project Methodology
 
 To create a robust model to select the players of the Rarita Football Team, data from the [English Premier League (EPL)](https://projects.fivethirtyeight.com/soccer-predictions/premier-league/) was used as the training data. The EPL data was split according to the player's roles, namely the Forwards, Midfielders, Defenders and Goalkeepers. A series of models, including [XGBoost](https://xgboost.readthedocs.io/en/stable/) and Regularised Linear Regression were trained on the EPL dataset.

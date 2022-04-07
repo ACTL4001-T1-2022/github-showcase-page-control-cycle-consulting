@@ -84,6 +84,8 @@ Through our two expenditure programs, investments are aimed at the grassroots le
   <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 8: Average Annual Socio-Economic Impact]</b></figcaption>
 </figure>
 
+For exploration of financial modelling and underlying assumptions, please refer to the [Excel Model](financial%20projections.xlsx).
+
 ## Project Methodology
 <hr style="height:1px;">
 
