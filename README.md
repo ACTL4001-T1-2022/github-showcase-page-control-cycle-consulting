@@ -1,9 +1,12 @@
-<video autoplay muted loop style ="width:100%">
-  <source src = "images/banner.mp4">
-</video>
+
+
+https://user-images.githubusercontent.com/81688804/162188963-8ac183c9-cf0b-4c97-b239-bb1e9656e00d.mp4
+
+
 
 <!-- PROJECT LOGO -->
 <div align="center">
+  <img src="images/cycle.png">
   <h1 align="center">ACTL4001 Case Report</h1>
 
   <h3 align="center">Control-Cycle</h3>
