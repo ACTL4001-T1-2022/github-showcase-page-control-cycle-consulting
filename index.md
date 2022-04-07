@@ -48,6 +48,7 @@
 </div>
 
 ## About the Project
+<hr style="height:0.5px;"></hr>
 Football is a sport loved and played by billions worldwide. Beyond this, football can provide countries with opportunities for economic gain, global visibility and improved social outcomes. 
 
 In recognizing this, the country of Rarita has engaged our team to develop a strategy for entering the international Football and Sporting Association (“FSA”) League and develop a Rarita Football brand. 
@@ -56,6 +57,7 @@ This GitHub repository documents the code and methodology use in completing the 
 >For an in-depth exploration of our methodology, assumptions and strategy, please refer to the [Control Cycle - Rarita FSA League Report](Control%20Cycle%20-%20Rarita%20FSA%20League%20Report%202022.pdf).
 
 <h1 align="center" id = "project-summary">Project Summary</h1>
+<hr style="height:0.5px;"></hr>
 
 ### Rarita Football Team Selection
 
@@ -85,6 +87,7 @@ Through our two expenditure programs, investments are aimed at the grassroots le
 </figure>
 
 ## Project Methodology
+<hr style="height:0.5px;"></hr>
 
 To create a robust model to select the players of the Rarita Football Team, data from the [English Premier League (EPL)](https://projects.fivethirtyeight.com/soccer-predictions/premier-league/) was used as the training data. The EPL data was split according to the player's roles, namely the Forwards, Midfielders, Defenders and Goalkeepers. A series of models, including [XGBoost](https://xgboost.readthedocs.io/en/stable/) and Regularised Linear Regression were trained on the EPL dataset.
 
@@ -124,6 +127,7 @@ To further understand the methodology used, explore the R Markdown documents bel
 * [Model Analysis](R%20Markdowns\02%20Model%20Analysis\02%20Model%20Analysis.nb.html)
 
 ## Conclusion
+<hr style="height:0.5px;"></hr>
 
 Ultimately, through our team selection and implementation strategies, we expect Rarita to achieve the below three objectives and successfully develop a Rarita Football brand over the next ten years.
 
