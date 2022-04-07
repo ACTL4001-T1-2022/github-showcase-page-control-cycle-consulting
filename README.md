@@ -71,12 +71,14 @@ The project began with the process of team selection which involves identifying 
 ### Economic Impact
 
 With such achievements, the resulting commercial success creates a cycle of strategic growth by generating sufficient resources to allow implementation of key strategies which support the development of players to their maximum potential whilst engaging the broader community. 
+
 <!-- Fig 5: Cycle of Strategic Growth -->
 <figure align="center">
   <img src="images/fig_5.png" alt="Growth-Cycle" width="100%">
   
   <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 5: Cycle of Strategic Growth]</b></figcaption>
 </figure>
+
 
 Through our two expenditure programs, investments are aimed at the grassroots level, allowing an equitable re-distribution of profits to improve the general quality of life and wellbeing. Ultimately, our strategies will guarantee sustainable and profitable growth, creating on average over **∂11.64 billion** worth of annual socio-economic benefits. 
 
