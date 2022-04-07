@@ -63,9 +63,7 @@ The project began with the process of team selection which involves identifying 
 
 <!-- PROJECT LOGO -->
 <figure align="center">
-  <img src="images/fig_2.png" alt="Logo" width="100%">
-
-  <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 2: Projected Team Ranking – 95% Confidence Interval]</b></figcaption>
+  <img src="images/fig_2_md.png" alt="Logo" width="100%">
 </figure>
 
 ### Economic Impact
@@ -74,9 +72,7 @@ With such achievements, the resulting commercial success creates a cycle of stra
 
 <!-- Fig 5: Cycle of Strategic Growth -->
 <figure align="center">
-  <img src="images/fig_5.png" alt="Growth-Cycle" width="100%">
-  
-  <figcaption align = "center" style = "font-size:9pt;"><b>[Figure 5: Cycle of Strategic Growth]</b></figcaption>
+  <img src="images/fig_5_md.png" alt="Growth-Cycle" width="100%">
 </figure>
 
 
@@ -134,6 +130,5 @@ Ultimately, through our team selection and implementation strategies, we expect 
 
 <!--Key Objectives for the Rarita Football Team-->
 <figure align="center">
-  <img src="images/fig_1.png" alt="Objectives" width="100%">
-  <figcaption align = "center" style = "font-size:9pt;"><b>Figure 1: Key Objectives for the Rarita Football Team</b></figcaption>
+  <img src="images/fig_1_md.png" alt="Objectives" width="100%">
 </figure>
