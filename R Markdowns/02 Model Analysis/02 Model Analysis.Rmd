@@ -1,0 +1,133 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r setup, include=F}
+rprojroot::find_rstudio_root_file()
+setwd(rprojroot::find_rstudio_root_file())
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
+
+source("00 set up.R")
+load("spi prediction/league_spi_pred.RData")
+pacman::p_load(
+  vip,
+  RColorBrewer,
+  glmnet
+)
+```
+
+# XGBoost Model evaluation 
+
+## Forward Model
+```{r}
+league_spi_pred%>%
+  pluck("fit",1)%>%
+  extract_fit_parsnip()%>%
+  vip::vip(geom = "col", 
+           num_features = 20,
+           aesthetics = list(alpha = 0.8)) +
+  scale_y_continuous(expand = c(0, 0))+
+  ggtitle("XGB Variable Importance - FW")+
+  theme_minimal()
+
+# Top 10 
+league_spi_pred%>%
+  pluck("fit",1)%>%
+  extract_fit_parsnip()%>%
+  vip::vip(geom = "col", 
+           num_features = 10,
+           aesthetics = list(fill = brewer.pal(10,"RdBu"), alpha = 0.8)) +
+  scale_y_continuous(expand = c(0, 0))+
+  ggtitle("Top 10 FW VIP")+
+  theme_minimal()
+```
+
+## Midfield Model
+```{r}
+league_spi_pred%>%
+  pluck("fit",2)%>%
+  extract_fit_parsnip()%>%
+  vip::vip(geom = "col", 
+           num_features = 20,
+           aesthetics = list(alpha = 0.8)) +
+  scale_y_continuous(expand = c(0, 0))+
+  ggtitle("XGB Variable Importance - MF")+
+  theme_minimal()
+
+# Top 10 
+league_spi_pred%>%
+  pluck("fit",2)%>%
+  extract_fit_parsnip()%>%
+  vip::vip(geom = "col", 
+           num_features = 10,
+           aesthetics = list(fill = brewer.pal(10,"RdBu"), alpha = 0.8)) +
+  scale_y_continuous(expand = c(0, 0))+
+  ggtitle("Top 10 MF VIP")+
+  theme_minimal()
+```
+
+## Midfield Model
+```{r}
+league_spi_pred%>%
+  pluck("fit",3)%>%
+  extract_fit_parsnip()%>%
+  vip::vip(geom = "col", 
+           num_features = 20,
+           aesthetics = list(alpha = 0.8)) +
+  scale_y_continuous(expand = c(0, 0))+
+  ggtitle("XGB Variable Importance - DF")+
+  theme_minimal()
+
+# Top 10 
+league_spi_pred%>%
+  pluck("fit",3)%>%
+  extract_fit_parsnip()%>%
+  vip::vip(geom = "col", 
+           num_features = 10,
+           aesthetics = list(fill = brewer.pal(10,"RdBu"), alpha = 0.8)) +
+  scale_y_continuous(expand = c(0, 0))+
+  ggtitle("Top 10 DF VIP")+
+  theme_minimal()
+```
+
+# For Goalkeeper Model
+
+## Visualising lambda coefficients ####
+
+Log lambda curve can be seen below:
+
+```{r}
+gk_fit<-league_spi_pred%>%
+  pluck("fit",4)%>%
+  extract_fit_parsnip()%>%
+  pluck("fit")
+
+gk_fit%>%
+  plot(label = T, xvar = "lambda")
+```
+
+Plot paired with explanation by print shows, from left to right, how the paths of the coefficient changes against the $\ell_1$-norm, as $\lambda$ increases.
+
+The number of non-zero coefficients is the effective degrees of freedom.
+
+1. The number of nonzero coefficients (Df)
+2. The percent (of null) deviance explained (%dev)
+
+```{r}
+gk_fit%>%
+  print()
+
+gk_fit%>%
+  plot(label = T, xvar = "dev")
+```
+
+This is percent deviance explained on the training data, and is a measure of complexity of the model. We see that toward the end of the path, %deviance is not changing much but the coefficients are “blowing up” a bit. This enables us focus attention on the parts of the fit that matter.
+
+## Obtaining the model coefficients
+```{r}
+league_spi_pred%>%
+  pluck("fit",4)%>%
+    tidy()%>%
+    rename(lambda=penalty) 
+```
